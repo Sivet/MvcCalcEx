@@ -1,0 +1,22 @@
+﻿@model MvcCalcEx.Models.CalcModel
+
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.Label("input 1")
+    @Html.TextBox("Num1", Model.Num1.ToString());
+    @Html.Label("input 2")
+    @Html.TextBox("Num2", Model.Num2.ToString());
+    <br />
+    @Html.Label("result:  ")
+    @Html.Label("Result", Model.Result.ToString());
+    <br />
+    <input type="submit" name="submit" id="submitAdd" value="add" />
+    <input type="submit" name="submit" id="submitSubtract" value="subtract" />
+    <input type="submit" name="submit" id="submitDivide" value="divide" />
+    <input type="submit" name="submit" id="submitMultiply" value="multiply" />
+
+}
