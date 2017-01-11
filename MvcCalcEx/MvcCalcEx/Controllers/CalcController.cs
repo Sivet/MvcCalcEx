@@ -23,26 +23,25 @@ namespace MvcCalcEx.Controllers
             switch (submit)
             {
                 case "add":
-                    res = model.Num1 + model.Num2;
+                    model.Result = model.Num1 + model.Num2;
                     break;
                 case "subtract":
-                    res = model.Num1 - model.Num2;
+                    model.Result = model.Num1 - model.Num2;
                     break;
                 case "divide":
-                    res = model.Num1 / model.Num2;
+                    model.Result = model.Num1 / model.Num2;
                     break;
                 case "multiply":
-                    res = model.Num1 * model.Num2;
+                    model.Result = model.Num1 * model.Num2;
                     break;
                 default:
                     return new HttpStatusCodeResult
                         (System.Net.HttpStatusCode.NotImplemented,
                         "calcControler not implemented " + submit);
             }
-            model.Result = res;
             
             //ModelState.Clear(); //ville fjerne indholdet i alle tekstboxe
-            ModelState.Remove("Result"); //Clearer den bestemte tekstbox
+            //ModelState.Remove("Result"); //Clearer den bestemte tekstbox
             return View(model); //sender de nye værdier til viewet.
         }
     }

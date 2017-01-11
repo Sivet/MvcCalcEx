@@ -7,11 +7,13 @@
 @using (Html.BeginForm())
 {
     @Html.Label("input 1")
-    @Html.TextBox("Num1", Model.Num1.ToString());
+    //løs binding på variablen Num1 der indeholder Num1's værdi
+    @Html.TextBox("Num1", Model.Num1);
     @Html.Label("input 2")
-    @Html.TextBox("Num2", Model.Num2.ToString());
+    //stærk binding på variablen Num2 der indeholder Num2's værdi
+    @Html.TextBoxFor(Model => Model.Num2, Model.Num2);
     <br />
-    @Html.Label("Result", Model.Result.ToString());
+    @Html.Label("Result", Model.Result);
     <br />
     <input type="submit" name="submit" id="submitAdd" value="add" />
     <input type="submit" name="submit" id="submitSubtract" value="subtract" />
