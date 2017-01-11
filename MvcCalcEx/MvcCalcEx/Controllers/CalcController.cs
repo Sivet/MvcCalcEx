@@ -18,7 +18,6 @@ namespace MvcCalcEx.Controllers
         [HttpPost]
         public ActionResult Index(string submit, Models.CalcModel model)
         {
-            int res;
 
             switch (submit)
             {
@@ -41,7 +40,7 @@ namespace MvcCalcEx.Controllers
             }
             
             //ModelState.Clear(); //ville fjerne indholdet i alle tekstboxe
-            //ModelState.Remove("Result"); //Clearer den bestemte tekstbox
+            ModelState.Remove("Result"); //Clearer den bestemte tekstbox
             return View(model); //sender de nye værdier til viewet.
         }
     }
